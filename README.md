@@ -59,6 +59,8 @@ The central prometheus would have a job per provider to ingest the federate info
     (...)
 ```
 
+If you want to add your job to the monitoring config please add it via a pull request to the [prometheus-master.yml](https://github.com/rpc-providers/rpc-prometheus/blob/master/prometheus-master.yml) configuration file in this repository. 
+
 ## Provider prometheus
 
 The provider's prometheus would scrape it's own rpc node's and enable access to this information to the central prometheus. 
@@ -75,6 +77,8 @@ scrape_configs:
       - targets: ['node01:9615']
       - targets: ['node02:9615']
 ```
+
+A full example can be found in [prometheus-provider.yml](https://github.com/rpc-providers/rpc-prometheus/blob/master/prometheus-provider.yml) 
 
 ## Access 
 
