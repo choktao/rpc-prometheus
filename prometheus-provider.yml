@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 60s
+  evaluation_interval: 60s
+
+# Example config, adapt to relevant node's
+scrape_configs:
+  - job_name: "provider"
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['node01:9615']
+      - targets: ['node02:9615']
+      - targets: ['node02:9615']
