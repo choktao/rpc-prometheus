@@ -65,7 +65,9 @@ If you want to add your job to the monitoring config please add it via a pull re
 
 The provider's prometheus would scrape it's own rpc node's and enable access to this information to the central prometheus. 
 
-This would preferably be a seperate prometheus instance which only knows the relevant endpoints (for example a seperate VPS instance with only that function) or can be an extra job on the existing prometheus of a provider. This can have some downsides: 1. technically also other info could be exposed to the monitoring instance and 2. you have to be carefull with your own panels so that you don't measure data twice since the are ingested twice (you would have to split them for example with a {job=....} identifier).
+Best is to use a dedicated Prometheus instance that only knows the relevant endpoints. For example a separate VPS just for monitoring. Alternatively, you can add a new job to an existing Prometheus instance, but keep in mind that:
+- Other data may become visible to the monitoring instance.
+- Make sure you don't measure the same data twice. A good practice is to separate it using a unique identifier, like {job=...}, so your panels stay accurate.
 
 A typical job would be: 
 
