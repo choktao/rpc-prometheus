@@ -32,4 +32,16 @@ scrape_configs:
     static_configs:
       - targets:
         - monitor.stakeworld.io:9091
+# Job GlobalStake        
+  - job_name: "GlobalStake"
+    scrape_interval: 15s
+    honor_labels: true
+    metrics_path: "/federate"
+    params:
+      "match[]":
+        - '{job="GlobalStake"}'
+    static_configs:
+      - targets:
+        - '216.66.9.45:9090'
 # Job provider ...
+
