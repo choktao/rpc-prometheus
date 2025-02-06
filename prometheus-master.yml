@@ -44,4 +44,13 @@ scrape_configs:
       - targets:
         - '216.66.9.45:9090'
 # Job provider ...
-
+  - job_name: "Helixstreet"
+    scrape_interval: 15s
+    honor_labels: true
+    metrics_path: "/federate"
+    params:
+      "match[]":
+        - '{job="Helixstreet"}'
+    static_configs:
+      - targets:
+        - 'rpc-prometheus.helixstreet.io:9090'
