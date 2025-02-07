@@ -88,6 +88,7 @@ Access should be granted to the central monitor to access the provider prometheu
 
 ``` 
 ufw allow from 18.156.32.189 to any port 9090
+ufw allow from 2a05:d014:14e6:7900:f077:59ec:99f3:9bd7 to any port 9090
 ```
 
 If there is a wish in the future this could also be done through a vpn connection, so the connection would be encoded.
