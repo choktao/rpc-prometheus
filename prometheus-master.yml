@@ -54,3 +54,15 @@ scrape_configs:
     static_configs:
       - targets:
         - 'rpc-prometheus.helixstreet.io:9090'
+  # Job Dwellir
+  - job_name: "Dwellir"
+    scrape_interval: 15s
+    honor_labels: true
+    metrics_path: "/federate"
+    params:
+      "match[]":
+        - '{job="Dwellir"}'
+    static_configs:
+      - targets: ['rpc-monitoring-se1.dwellir.com']
+      - targets: ['rpc-monitoring-se2.dwellir.com']
+      - targets: ['rpc-monitoring-tn.dwellir.com']
