@@ -63,6 +63,6 @@ scrape_configs:
       "match[]":
         - '{job="Dwellir"}'
     static_configs:
-      - targets: ['rpc-monitoring-se1.dwellir.com']
-      - targets: ['rpc-monitoring-se2.dwellir.com']
-      - targets: ['rpc-monitoring-tn.dwellir.com']
+      - targets: ['rpc-monitoring-se1.dwellir.com:443']
+      - targets: ['rpc-monitoring-se2.dwellir.com:443']
+      - targets: ['rpc-monitoring-tn.dwellir.com:443']
