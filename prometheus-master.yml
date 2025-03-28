@@ -67,3 +67,15 @@ scrape_configs:
       - targets: ['rpc-monitoring-se1.dwellir.com']
       - targets: ['rpc-monitoring-se2.dwellir.com']
       - targets: ['rpc-monitoring-tn.dwellir.com']
+# Job Blockops        
+  - job_name: "blockops"
+    scrape_interval: 15s
+    honor_labels: true
+    metrics_path: "/federate"
+    params:
+      "match[]":
+        - '{job="blockops"}'
+    static_configs:
+      - targets:
+        - blockops-rpc-prometheus.blockops.network:443
+    scheme: https
